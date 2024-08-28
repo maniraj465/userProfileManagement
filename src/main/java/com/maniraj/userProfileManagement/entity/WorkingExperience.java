@@ -21,6 +21,6 @@ public class WorkingExperience {
     private String jobTitle;
     private String startDate;
     private String endDate;
-    @Column(name = "responsibilities", length = 3000)
+    @Column(name = "responsibilities", length = 5000)
     private List<String> responsibilities;
 }

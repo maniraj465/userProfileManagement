@@ -20,6 +20,6 @@ public class InstitutionDetail {
     private String major;
     private String startDate;
     private String graduationDate;
-    @Column(name = "achievements", length = 3000)
+    @Column(name = "achievements", length = 5000)
     private String[] achievements;
 }
