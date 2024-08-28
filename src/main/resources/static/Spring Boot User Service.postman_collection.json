@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "91f03262-86c6-4281-a6c6-145dd2ff061f",
+		"name": "Spring Boot User Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11857275",
+		"_collection_link": "https://grey-trinity-979114.postman.co/workspace/Java-Projects~d9490e89-099f-4666-b92b-782d46e920a5/collection/11857275-91f03262-86c6-4281-a6c6-145dd2ff061f?action=share&source=collection_link&creator=11857275"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile_picture",
+							"contentType": "image/gif",
+							"type": "file",
+							"src": "postman-cloud:///1ef648d7-bf36-4610-97cf-0d291b287c6b"
+						},
+						{
+							"key": "user",
+							"value": "{\n    \"firstName\": \"Maniraj\",\n    \"lastName\": \"Sivasubbu\",\n    \"email\": \"smaniraj15@gmail.com\",\n    \"role\": \"ADMIN\",\n    \"dob\": \"1994-10-02\",\n    \"createdDate\": \"2024-10-02\",\n    \"updatedDate\": \"2024-10-02\",\n    \"occupation\": \"WORKING_PROFESSIONAL\",\n    \"skills\": [\n        \"Java\",\n        \"Spring Boot\",\n        \"Database\"\n    ],\n    \"institutionDetail\": [\n        {\n            \"institutionName\": \"PSG College of Technology\",\n            \"educationLevel\": \"Bachelor of Technology\",\n            \"major\": \"Information Technology\",\n            \"startDate\": \"2017-06-01\",\n            \"graduationDate\": \"2020-08-02\",\n            \"achievements\": [\n                \"Best project award for final year project\",\n                \"Completed 3 months internship in the company called The Blues Consultants\"\n            ]\n        },\n        {\n            \"institutionName\": \"PSG Polytechnic College\",\n            \"educationLevel\": \"Diploma\",\n            \"major\": \"Information Technology\",\n            \"startDate\": \"2014-06-01\",\n            \"graduationDate\": \"2017-05-31\",\n            \"achievements\": [\n                \"Best project award for final year project\",\n                \"Completed 3 months internship in the company called The Blues Consultants\"\n            ]\n        }\n    ],\n    \"workingExperience\": [\n        {\n            \"employer\": \"Oracle\",\n            \"jobTitle\": \"Application Developer 2\",\n            \"startDate\": \"2022-06-26\",\n            \"endDate\": null,\n            \"responsibilities\": [\n                \"Developing enterprise application using Redwood and Oracle Application Development Framework\",\n                \"Responsible for implementing REST microservices using Spring Boot\",\n                \"Responsible for feature enhancements and fixing bugs\"\n            ]\n        },\n        {\n            \"employer\": \"PwC\",\n            \"jobTitle\": \"Application Developer 2\",\n            \"startDate\": \"2021-01-20\",\n            \"endDate\": \"2022-06-25\",\n            \"responsibilities\": [\n                \"Developing enterprise application using Redwood and Oracle Application Development Framework\",\n                \"Responsible for implementing REST microservices using Spring Boot\",\n                \"Responsible for feature enhancements and fixing bugs\"\n            ]\n        }\n    ],\n    \"codingPlatform\": [\n        {\n            \"platformName\": \"LeetCode\",\n            \"platformLink\": \"https://leetcode.com/u/maniraj_progee/\"\n        },\n        {\n            \"platformName\": \"GeeksforGeeks\",\n            \"platformLink\": \"https://www.geeksforgeeks.org/user/smaniraj\"\n        },\n        {\n            \"platformName\": \"Hackerrank\",\n            \"platformLink\": \"https://www.hackerrank.com/profile/smaniraj15\"\n        }\n    ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Maniraj\",\r\n    \"lastName\": \"Sivasubbu\",\r\n    \"email\": \"smaniraj15@gmail.com\",\r\n    \"role\": \"ADMIN\",\r\n    \"dob\": \"1994-10-02\",\r\n    \"createdDate\": \"2024-10-02\",\r\n    \"updatedDate\": \"2024-10-02\",\r\n    \"occupation\": \"WORKING_PROFESSIONAL\",\r\n    \"skills\": [\r\n        \"Java\",\r\n        \"Spring Boot\",\r\n        \"Database\"\r\n    ],\r\n    \"codingPlatform\": [\r\n        {\r\n            \"platformName\": \"LeetCode\",\r\n            \"platformLink\": \"https://leetcode.com/u/maniraj_progee/\"\r\n        },\r\n        {\r\n            \"platformName\": \"HackerRank\",\r\n            \"platformLink\": \"https://hackerrank.com/maniraj_progee/\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile_picture",
+							"contentType": "",
+							"type": "file",
+							"src": "postman-cloud:///1ef649a9-38b0-4f00-99a8-2c671ba69399"
+						},
+						{
+							"key": "user",
+							"value": "{\n    \"userId\": \"3\",\n    \"firstName\": \"Maniraj\",\n    \"lastName\": \"Sivasubbu\",\n    \"email\": \"smaniraj15@gmail.com\",\n    \"role\": \"ADMIN\",\n    \"dob\": \"1994-10-02\",\n    \"createdDate\": \"2024-10-02\",\n    \"updatedDate\": \"2024-10-02\",\n    \"occupation\": \"STUDENT\",\n    \"skills\": [\n        \"Java\",\n        \"Spring Boot\",\n        \"Database\"\n    ],\n    \"institutionDetail\": [\n        {\n            \"institutionName\": \"PSG College of Technology\",\n            \"educationLevel\": \"Bachelor of Technology\",\n            \"major\": \"Information Technology\",\n            \"startDate\": \"2017-06-01\",\n            \"graduationDate\": \"2020-08-02\",\n            \"achievements\": [\n                \"Best project award for final year project\",\n                \"Completed 3 months internship in the company called The Blues Consultants\"\n            ]\n        },\n        {\n            \"institutionName\": \"PSG Polytechnic College\",\n            \"educationLevel\": \"Diploma\",\n            \"major\": \"Information Technology\",\n            \"startDate\": \"2014-06-01\",\n            \"graduationDate\": \"2017-05-31\",\n            \"achievements\": [\n                \"Best project award for final year project\",\n                \"Completed 3 months internship in the company called The Blues Consultants\"\n            ]\n        }\n    ],\n    \"workingExperience\": [\n        {\n            \"employer\": \"Oracle\",\n            \"jobTitle\": \"Application Developer 2\",\n            \"startDate\": \"2022-06-26\",\n            \"endDate\": null,\n            \"responsibilities\": [\n                \"Developing enterprise application using Redwood and Oracle Application Development Framework\",\n                \"Responsible for implementing REST microservices using Spring Boot\",\n                \"Responsible for feature enhancements and fixing bugs\"\n            ]\n        },\n        {\n            \"employer\": \"PwC\",\n            \"jobTitle\": \"Application Developer 2\",\n            \"startDate\": \"2021-01-20\",\n            \"endDate\": \"2022-06-25\",\n            \"responsibilities\": [\n                \"Developing enterprise application using Redwood and Oracle Application Development Framework\",\n                \"Responsible for implementing REST microservices using Spring Boot\",\n                \"Responsible for feature enhancements and fixing bugs\"\n            ]\n        }\n    ],\n    \"codingPlatform\": [\n        {\n            \"platformName\": \"LeetCode\",\n            \"platformLink\": \"https://leetcode.com/u/maniraj_progee/\"\n        },\n        {\n            \"platformName\": \"GeeksforGeeks\",\n            \"platformLink\": \"https://www.geeksforgeeks.org/user/smaniraj\"\n        },\n        {\n            \"platformName\": \"Hackerrank\",\n            \"platformLink\": \"https://www.hackerrank.com/profile/smaniraj15\"\n        }\n    ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user",
+			"value": "{\"firstName\":\"Maniraj\",\"lastName\":\"Sivasubbu\",\"email\":\"smaniraj15@gmail.com\",\"role\":\"ADMIN\",\"dob\":\"1994-10-02\",\"createdDate\":\"2024-10-02\",\"updatedDate\":\"2024-10-02\",\"occupation\":\"WORKING_PROFESSIONAL\",\"skills\":[\"Java\",\"SpringBoot\",\"Database\"],\"institutionDetail\":[{\"institutionName\":\"PSGCollegeofTechnology\",\"educationLevel\":\"BachelorofTechnology\",\"major\":\"InformationTechnology\",\"startDate\":\"2017-06-01\",\"graduationDate\":\"2020-08-02\",\"achievements\":[\"Bestprojectawardforfinalyearproject\",\"Completed3monthsinternshipinthecompanycalledTheBluesConsultants\"]},{\"institutionName\":\"PSGPolytechnicCollege\",\"educationLevel\":\"Diploma\",\"major\":\"InformationTechnology\",\"startDate\":\"2014-06-01\",\"graduationDate\":\"2017-05-31\",\"achievements\":[\"Bestprojectawardforfinalyearproject\",\"Completed3monthsinternshipinthecompanycalledTheBluesConsultants\"]}],\"workingExperience\":[{\"employer\":\"Oracle\",\"jobTitle\":\"ApplicationDeveloper2\",\"startDate\":\"2022-06-26\",\"endDate\":null,\"responsibilities\":[\"DevelopingenterpriseapplicationusingRedwoodandOracleApplicationDevelopmentFramework\",\"ResponsibleforimplementingRESTmicroservicesusingSpringBoot\",\"Responsibleforfeatureenhancementsandfixingbugs\"]},{\"employer\":\"PwC\",\"jobTitle\":\"ApplicationDeveloper2\",\"startDate\":\"2021-01-20\",\"endDate\":\"2022-06-25\",\"responsibilities\":[\"DevelopingenterpriseapplicationusingRedwoodandOracleApplicationDevelopmentFramework\",\"ResponsibleforimplementingRESTmicroservicesusingSpringBoot\",\"Responsibleforfeatureenhancementsandfixingbugs\"]}],\"codingPlatform\":[{\"platformName\":\"LeetCode\",\"platformLink\":\"https://leetcode.com/u/maniraj_progee/\"},{\"platformName\":\"GeeksforGeeks\",\"platformLink\":\"https://www.geeksforgeeks.org/user/smaniraj\"},{\"platformName\":\"Hackerrank\",\"platformLink\":\"https://www.hackerrank.com/profile/smaniraj15\"}]}"
+		}
+	]
+}
