@@ -24,9 +24,15 @@ public class UserController {
 
     @PostMapping
     @RequestMapping(consumes = { "multipart/form-data" })
-//    public void upload(@RequestPart("user") @Valid User user, @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) {
-    public ResponseEntity<?> createUSer(@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
+    public ResponseEntity<?> createUser(@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
         service.addUser(user, image);
+        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+
+    @PutMapping
+    @RequestMapping(path = "{id}", consumes = { "multipart/form-data" })
+    public ResponseEntity<?> updateUser (@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
+        service.updateUser(user, image);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
 

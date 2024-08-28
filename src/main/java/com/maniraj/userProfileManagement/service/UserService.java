@@ -11,6 +11,8 @@ public interface UserService {
 
     void addUser(User user, MultipartFile image) throws IOException;
 
+    User updateUser(User user, MultipartFile image) throws IOException;
+
     List<User> getAllUsers();
 
     Optional<User> getUser(Long id);
