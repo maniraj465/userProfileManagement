@@ -31,7 +31,7 @@ public class UserController {
 
     @PutMapping
     @RequestMapping(path = "{id}", consumes = { "multipart/form-data" })
-    public ResponseEntity<?> updateUser (@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
+    public ResponseEntity<?> updateUser(@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
         service.updateUser(user, image);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }

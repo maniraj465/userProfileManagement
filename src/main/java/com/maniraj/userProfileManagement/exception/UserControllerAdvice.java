@@ -6,16 +6,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException() {
-        this("User not found.");
-    }
+@RestControllerAdvice
+public class UserControllerAdvice extends ResponseEntityExceptionHandler {
 
-    public UserNotFoundException(String message) {
-        super(message);
-    }
-
-    public UserNotFoundException(Long id) {
-        this("User not found with ID: " + id);
+    @ExceptionHandler(UserNotFoundException.class)
+    public ProblemDetail handleUserNotFoundException(UserNotFoundException exception) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage());
     }
 }
