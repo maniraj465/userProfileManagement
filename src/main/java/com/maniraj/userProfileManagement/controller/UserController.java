@@ -22,15 +22,13 @@ public class UserController {
         this.service = service;
     }
 
-    @PostMapping
-    @RequestMapping(consumes = { "multipart/form-data" })
+    @PostMapping(consumes = { "multipart/form-data" })
     public ResponseEntity<?> createUser(@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
         service.addUser(user, image);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
 
-    @PutMapping
-    @RequestMapping(path = "{id}", consumes = { "multipart/form-data" })
+    @PutMapping(path = "{id}", consumes = { "multipart/form-data" })
     public ResponseEntity<?> updateUser(@RequestPart("user") User user, @RequestPart("profile_picture") MultipartFile image) throws IOException {
         service.updateUser(user, image);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
