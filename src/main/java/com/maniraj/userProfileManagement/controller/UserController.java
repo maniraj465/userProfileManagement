@@ -3,6 +3,8 @@ package com.maniraj.userProfileManagement.controller;
 import com.maniraj.userProfileManagement.entity.User;
 import com.maniraj.userProfileManagement.exception.UserNotFoundException;
 import com.maniraj.userProfileManagement.service.UserServiceImpl;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @RestController
@@ -18,8 +21,17 @@ public class UserController {
 
     UserServiceImpl service;
 
-    public UserController(UserServiceImpl service) {
+    MessageSource messageSource;
+
+    public UserController(UserServiceImpl service, MessageSource messageSource) {
+        this.messageSource = messageSource;
         this.service = service;
+    }
+
+    @GetMapping(path = "greet")
+    public String greeting() {
+        Locale local = LocaleContextHolder.getLocale();
+        return messageSource.getMessage("hello.message", null, "Hello from Default!", local);
     }
 
     @PostMapping(consumes = { "multipart/form-data" })

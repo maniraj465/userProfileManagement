@@ -169,6 +169,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Internationalization - i18n & Content Negotiation",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/users/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"greet"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
